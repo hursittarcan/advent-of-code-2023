@@ -5,12 +5,18 @@
 
 lastNumber = line[i];
 
-## Day One - Trebuchet?!
-
-This JavaScript code reads the content of a file named `input.txt` using the 'fs' (file system) module. The file is assumed to contain text with numeric values. The program calculates a calibration total based on the first and last numeric characters found on each line of the file.
+## Day One - Trebuchet?! [Part 1]
+This JavaScript code reads the content of `input.txt` 
+using the 'fs' (file system) module. The file is assumed to contain 
+text with numeric values. The program calculates a calibration total 
+based on the first and last numeric characters found on each line of this file.
 
 1. **File Reading:**
+    - In the initial two lines, we import the 'fs' module for file system operations in Node.js and set the file name 'input.txt' to the variable filePath.
+      `const fs = require('fs');`
+      `const filePath = 'input.txt';`
     - It uses the 'fs.readFile' function to read the content of the 'input.txt' file in UTF-8 encoding.
+    - `fs.readFile(filePath, 'utf8', (err, data)`
     - The content is split into an array of lines using the newline character (`\n`).
 
 2. **Calibration Calculation:**
