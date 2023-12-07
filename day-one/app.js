@@ -31,5 +31,4 @@ fs.readFile(filePath, 'utf8', (err, data) => {
             totalCalibration += parseInt(totalLine);
         }
     });
-    console.log(totalCalibration);
 });
