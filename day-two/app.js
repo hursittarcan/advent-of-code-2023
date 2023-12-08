@@ -9,10 +9,27 @@ fs.readFile(filePath, 'utf8', (err, data) => {
         let gameDetails = games[i];
         let gameId = gameDetails.split(':')[0].split(' ')[1];
 
-        console.log(gameId)
+        let gameSets = gameDetails.split(':')[1].split(';');
+        console.log(gameSets);
+
+        for (let i = 0; i < gameSets.length; i++) {
+            // console.log(gameSets[i].split(',').length);
+            // console.log(gameSets[i].split(',')[0]);
+            // console.log(gameSets[i].split(',')[1]);
+            let gameSetLength = gameSets[i].split(',').length;
+            for (let j = 0; j < gameSetLength; j++) {
+                console.log(gameSets[i].split(',')[j]);
+            }
+            console.log("-----");
+        }
+
+        //console.log(gameDetails);
+        //console.log(gameId);
 
 
         //Game 5: 3 green, 7 blue, 7 red; 6 green, 3 red, 4 blue; 7 blue, 4 red
         //console.log(gameDetails)
+        console.log("--- SET ENDS HERE ---")
     }
+
 })
