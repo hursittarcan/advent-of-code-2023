@@ -52,5 +52,3 @@ for (const index of numberIndices) {
     if (num[5] !== "" && /\d/.test(line[j + 3] ?? "")) num[6] = line[j + 3];
     resultArray.push(num.join(""));
 }
-
-console.log(resultArray.reduce((a, x, i, r) => a + (i % 2 === 0 ? parseInt(x) * parseInt(r[i + 1]) : 0), 0));
