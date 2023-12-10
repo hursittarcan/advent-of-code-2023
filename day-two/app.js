@@ -25,18 +25,23 @@ fs.readFile(filePath, 'utf8', (err, data) => {
             for (let j = 0; j < gameSetLength; j++) {
                 let setDetails= gameSets[i].split(',')[j].trim().split(' ');
                 if (setDetails[1] === "red") {
-                    if (setDetails[0] > reds) {
-                        console.log(setDetails[0])
+                    console.log("red: " + setDetails[0]);
+                    if (parseInt(setDetails[0]) > reds) {
+                        console.log("highest red: " + setDetails[0])
                         reds = setDetails[0];
                     }
                 }
                 else if (setDetails[1] === "green") {
-                    if (setDetails[0] > greens) {
+                    console.log("green: " + setDetails[0]);
+                    if (parseInt(setDetails[0]) > greens) {
+                        console.log("highest green: " + setDetails[0])
                         greens = setDetails[0];
                     }
                 }
                 else if (setDetails[1] === "blue") {
-                    if (setDetails[0] > blues) {
+                    console.log("blue: " + setDetails[0]);
+                    if (parseInt(setDetails[0]) > blues) {
+                        console.log("highest blue: " + setDetails[0])
                         blues = setDetails[0];
                     }
                 }
@@ -44,17 +49,15 @@ fs.readFile(filePath, 'utf8', (err, data) => {
         }
 
         console.log('---');
-        console.log(reds);
-        console.log(greens);
-        console.log(blues);
+        console.log("final red: " + reds);
+        console.log("final green: " +greens);
+        console.log("final blue: " + blues);
         console.log('---');
 
         gamePowerTotal += (reds * greens * blues);
+        //console.log(gamePowerTotal);
+        console.log("Power sum: " + (reds * greens * blues));
 
-        // if (failed === 0) {
-        //     console.log("Game with ID " + gameId + " has passed.");
-        //     gameIdTotal += parseInt(gameId);
-        // }
     }
     console.log(gamePowerTotal);
 })
