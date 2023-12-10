@@ -31,6 +31,5 @@ fs.readFile(filePath, 'utf8', (err, data) => {
             totalPoints += points;
         }
     }
-
     console.log(totalPoints);
 })
