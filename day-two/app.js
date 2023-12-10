@@ -23,15 +23,25 @@ fs.readFile(filePath, 'utf8', (err, data) => {
             for (let j = 0; j < gameSetLength; j++) {
                 let setDetails= gameSets[i].split(',')[j].trim().split(' ');
                 if (setDetails[1] === "red") {
-                    reds += setDetails[0];
+                    if (setDetails[1] > reds) {
+                        reds = setDetails[1];
+                    }
                 }
                 else if (setDetails[1] === "green") {
-                    greens += setDetails[0];
+                    if (setDetails[1] > greens) {
+                        greens = setDetails[1];
+                    }
                 }
                 else if (setDetails[1] === "blue") {
-                    blues += setDetails[0];
+                    if (setDetails[1] > blues) {
+                        blues = setDetails[1];
+                    }
                 }
             }
+
+            console.log(reds);
+            console.log(greens);
+            console.log(blues);
 
             if (reds > redCubes || greens > greenCubes || blues > blueCubes) {
                 failed++;
